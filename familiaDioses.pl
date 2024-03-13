@@ -39,13 +39,8 @@ esDescendienteDirecto(nera, zeus).
 esDescendienteDirecto(hermes,atena).
 
 
-esPadreDe(Padre, Hijo):-esHombre(Padre), esDescendienteDirecto(Hijo, Padre).
-esMadreDe(Madre, Hijo):-esMujer(Mujer), esDescendienteDirecto(Hijo, Madre).
-esHijoDe(Hijo, Padre):-esHombre(Hijo), esDescendienteDirecto(Hijo, Padre).
-esHijoDe(Hijo, Madre):-esHombre(Hijo), esDescendienteDirecto(Hijo, Madre).
-esHijaDe(Hija, Padre):-esMujer(Hija), esDescendienteDirecto(Hija, Padre).
-esHijaDe(Hija, Madre):-esMujer(Hija), esDescendienteDirecto(Hija, Madre).
-esHermano(Hermano, Hijo):-esDescendienteDirecto(Hermano, Padre), esHombre(Hermano)
-esAbuelo(Abuelo, Hijo):-esDescendienteDirecto(Hijo, Padre), esDescendienteDirecto(Padre, Abuelo),esHombre(Abuelo).
 
-esAncestro(Ancestro, Persona):-esPadre(Padre, Persona); esMadre(Ancestro, Persona), esDescendienteDirecto(Ancestro, Persona), esAncestro(Ancestro, Padre); esAncestro(Ancestro, Madre).
+
+
+esAncestro(Ancestro, Persona):-esDescendienteDirecto(Persona, Ancestro), esHombre(Ancestro).
+esAncestro(Ancestro, Persona):-esDescendienteDirecto(Persona, Padre), esAncestro(Ancestro, Padre).
