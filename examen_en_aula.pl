@@ -25,7 +25,7 @@ parlantes.
 consolas.
 laptop.
 escritorio.
-producto.
+producto
 
 esProducto(lg_510).
 esProducto(samsungB125).
@@ -58,6 +58,12 @@ estaEnCategoria(lg, parlantes).
 
 esProductoDentroDeCategoria(producto, categoria):- esProducto(producto), esCategoria(categoria), estaEnCategoria(producto, categoria).
 esProductoDentroDeCategoria(producto, categoria):- estaEnCategoria(categoria2, categoria), esProductoDentroDeCategoria(producto, categoria).
+
+esBlanco(lg_510).
+esBarato(lg_510).
+esBueno(lg_510).
+
+recomendarAMaria(producto):- esProducto(producto), esVerde(producto), esProductoDentroDeCategoria(producto, producto).
 
 
 
